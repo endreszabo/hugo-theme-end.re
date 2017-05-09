@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+	<head>
+{{ partial "head.html" . }}
+	</head>
+	<body>
+{{- partial "header.html" . }}		<main class="wrapper-main">
+			<section class="wrapper-content">
+				{{ if eq .Title "Tags" }}
+				<h1 class="h1-title">{{ i18n "termsTagsListIndexTitle" }}</h1>
+				{{ end }}
+				{{ if eq .Title "Categories" }}
+				<h1 class="h1-title">{{ i18n "termsCategoriesListIndexTitle" }}</h1>
+				{{ end }}
+				<div class="layout-wrap-inner tag-cloud">
+					{{- $site := .Site }}
+					{{- $data := .Data }}
+					<ul>
+					{{- range $key, $value := .Data.Terms.Alphabetical }}
+						<li>
+							<a href="{{ $site.LanguagePrefix }}/{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a> ({{ i18n "termsListEntryCount" $value }})
+						</li>
+					{{- end }}
+					</ul>
+				</div>
+			</section>
+		</main>
+		{{- partial "footer.html" . }}
+	</body>
+</html>
+

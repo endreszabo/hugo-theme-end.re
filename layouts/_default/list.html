@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+	<head>
+{{ partial "head.html" . }}
+	</head>
+	<body>
+{{- partial "header.html" . }}		<main class="wrapper-main">
+			<section class="wrapper-content">
+				<h1 class="h1-title">{{ i18n "categoryListIndexTitle" . }}</h1>
+				<div class="post-index">
+				{{- $posts := .Paginate (.Data.Pages) }}
+				{{- range $posts.Pages -}}
+					{{ if .Params.tnimage }}
+					<article class="post-content-with-image">
+					{{ else }}
+					<article class="post-content">
+					{{- end -}}
+							{{ if not (eq .Params.hideTitle true) }}
+						{{- if .Title }}
+						<h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a></h2>
+							{{- end -}}
+						{{- end -}}
+						{{ partial "post-meta" . }}
+						<div class="entry-content">
+							{{ .Summary -}}
+							{{- if .Truncated }}
+							<a href="{{ .RelPermalink }}" class="more-link">{{ i18n "readMoreText" }} &rarr;</a>
+							{{- end }}
+						</div>
+					</article>
+					{{- if .Params.tnimage }}
+					<a class="index-image" href="{{ .RelPermalink }}">
+						<img src="{{.Params.tnimage}}" alt="{{ .Title }}"/>
+					</a>
+					{{- end }}
+					<hr />
+				{{- end }}
+				</div>
+				{{- partial "pagination.html" . }}
+			</section>
+		</main>
+		{{- partial "footer.html" . }}
+	</body>
+</html>

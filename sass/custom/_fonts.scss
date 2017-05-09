@@ -1,0 +1,36 @@
+// Here you can easily change font faces which are used in your site.
+// To give it a try, uncomment some of the lines below rebuild your blog, and see how it works. your sites's.
+// If you love to use Web Fonts, you also need to add some lines to source/_includes/custom/head.html
+
+$sans: "P0", sans-serif;
+$font-default: "P0", sans-serif;
+$body-font: $font-default;
+$serif: "Baskerville", serif;
+$mono: Consolas,"DejaVu Sana Mono", "Courier", monospace;
+$font-mono: $mono;
+
+//$heading-font-family: "Verdana", sans-serif;
+//$header-title-font-family: "Futura", sans-serif;
+//$header-subtitle-font-family: "Futura", sans-serif;
+//$post-title-font-family: "Sinkin Sans 700",sans-serif;
+$post-title-font-family: "P1",sans-serif;
+@font-face{ font-family: 'Sinkin Sans 700'; src: url('/ss7b.eot'); src: url('/ss7b.eot?iefix') format('eot'), url('/ss7b.woff') format('woff'), url('/ss7b.ttf') format('truetype'), url('/ss7b.svg#/ss7b') format('svg'); }
+$meta-font-family: "Sinkin Sans 400",sans-serif;
+@font-face{ font-family: 'Sinkin Sans 400'; src: url('/ss4r.eot'); src: url('/ss4r.eot?iefix') format('eot'), url('/ss4r.woff') format('woff'), url('/ss4r.ttf') format('truetype'), url('/ss4r.svg#/ss4r') format('svg'); }
+@font-face {font-family: "P0";
+  src: url("/fonts/p0.eot"); /* IE9*/
+  src: url("/fonts/p0.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("/fonts/p0.woff2") format("woff2"), /* chrome、firefox */
+  url("/fonts/p0.woff") format("woff"), /* chrome、firefox */
+  url("/fonts/p0.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("/fonts/p0.svg#Panton W01 Regular") format("svg"); /* iOS 4.1- */
+}
+@font-face {font-family: "P1";
+  src: url("/fonts/p1.eot"); /* IE9*/
+  src: url("/fonts/p1.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("/fonts/p1.woff2") format("woff2"), /* chrome、firefox */
+  url("/fonts/p1.woff") format("woff"), /* chrome、firefox */
+  url("/fonts/p1.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("/fonts/p1.svg#Panton W01 Regular") format("svg"); /* iOS 4.1- */
+}
+

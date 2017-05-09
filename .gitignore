@@ -1,2 +1,8 @@
+static/fonts/p*
+static/ss*
+static/webfonts/
 .sass-cache/
 *.css.map
+.idea
+*~
+.DS_Store

@@ -1,0 +1,61 @@
+- id: latestPosts
+  translation: "Latest Posts"
+
+- id: blogHeading
+  translation: "Blog"
+
+- id: pageNotFound
+  translation: "Sorry, this page does not exist."
+
+- id: visitHomePage
+  translation: "Visit home page"
+
+- id: readingTime
+  translation:
+    one: "One minute read"
+    other: "{{ .Count }} minutes read"
+
+- id: backToPosts
+  translation: "Back to posts"
+
+- id: commentSectionTitle
+  translation: "Your opinion matters—be heard"
+
+- id: commentsLinkText
+  translation: comments
+
+- id: readInLanguage
+  translation: "Read in"
+
+- id: footerLicenseText
+  translation: '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Website contents at {{ .Site.Title }} by {{ .Site.Params.author }} are licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a> unless otherwise stated.'
+
+- id: disqusNoscriptText
+  translation: '<noscript><p>I respect your privacy. In general JavaScript is not required at all to view this site properly. However, if you are interested in comments please enable running of JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by my outsourced comment section provider Disqus.</a></p></noscript>'
+
+- id: readMoreText
+  translation: 'Read more'
+
+- id: blogPostsIndexTitle
+  translation: Blog Posts
+
+- id: tagListIndexTitle
+  translation: 'Entries tagged with <span class="tag-{{ .Title }}">##{{ .Title }}</span>'
+
+- id: categoryListIndexTitle
+  translation: '{{ .Title }} entries'
+
+- id: termsListIndexTitle
+  translation: 'List of {{ .Title }}'
+
+- id: termsTagsListIndexTitle
+  translation: 'List of Tags'
+
+- id: termsCategoriesListIndexTitle
+  translation: 'List of entry categories'
+
+- id: termsListEntryCount
+  translation:
+    one: 'one entry'
+    other: '{{ .Count}} entries'
+

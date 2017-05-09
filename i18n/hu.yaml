@@ -1,0 +1,61 @@
+- id: latestPosts
+  translation: "Latest Posts"
+
+- id: blogHeading
+  translation: "Blog"
+
+- id: pageNotFound
+  translation: "A keresett oldal nem található"
+
+- id: visitHomePage
+  translation: "Visit home page"
+
+- id: readingTime
+  translation:
+    one: "Egy percnyi olvasás"
+    other: "{{ .Count }} percnyi olvasás"
+
+- id: backToPosts
+  translation: "Back to posts"
+
+- id: commentSectionTitle
+  translation: "Számít a véleményed. Oszd meg!"
+
+- id: commentsLinkText
+  translation: kommentek
+
+- id: readInLanguage
+  translation: "Más nyelven:"
+
+- id: footerLicenseText
+  translation: '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Eltérő rendelkezés hiányában {{ .Site.Params.author }} a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>-szel licenceli az {{ .Site.Title }} weboldalon található tartalmait.'
+
+- id: disqusNoscriptText
+  translation: '<noscript><p>Tiszteletben tartom a privát szférád. Éppen ezért általánosságban az oldal működéséhez égyáltalán nem szükséges JavaScript. A komment szekció azonban kivétel ez alól, mert a kommentelési lehetőséget (lévén ez az oldal maga egy statikusan generált oldal) egy külső szolgáltató, <a href="http://disqus.com/?ref_noscript">Disqus biztosítja</a>.</p></noscript>'
+
+- id: readMoreText
+  translation: 'Tovább is van'
+
+- id: blogPostsIndexTitle
+  translation: Blog cikkek
+
+- id: tagListIndexTitle
+  translation: '<span class="tag-{{ .Title }}">#{{ .Title }}</span> címkéjű bejegyzések'
+
+- id: categoryListIndexTitle
+  translation: '{{ .Title }} témájú bejegyzések'
+
+- id: termsListIndexTitle
+  translation: '{{ .Title }} listája'
+
+- id: termsTagsListIndexTitle
+  translation: 'Címkék listája'
+
+- id: termsCategoriesListIndexTitle
+  translation: 'Bejegyzés kategóriák listája'
+
+- id: termsListEntryCount
+  translation:
+    one: 'egy bejegyzés'
+    other: '{{ .Count}} bejegyzés'
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+	<head>
+{{- partial "head.html" . }}
+	</head>
+	<body>
+{{- partial "header.html" . }}		<main class="wrapper-main">
+			<section class="wrapper-content">
+				<h1 class="h1-title">{{ i18n "blogPostsIndexTitle" }}</h1>
+				<div class="post-index">
+				{{- $posts := .Paginate (where .Data.Pages "Type" "blog") }}
+				{{- range $posts.Pages -}}
+					{{ if .Params.tnimage }}
+					<article class="post-content-with-image">
+					{{ else }}
+					<article class="post-content">
+					{{- end -}}
+							{{ if not (eq .Params.hideTitle true) }}
+						{{- if .Title }}
+						<h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a></h2>
+							{{- end -}}
+						{{- end -}}
+							{{ if not (eq .Params.hideMeta true) }}
+						{{- $Site := .Site -}}
+						{{- if .Params.categories }}
+						<span class="a-meta">
+							{{- range $i, $e := .Params.categories -}}
+							{{- if gt $i 0 }}
+							<span>, </span>
+							{{- end }}
+							<a class="category-{{ $e | urlize }}" href="{{ $Site.BaseURL }}/categories/{{ $e | urlize }}">{{ $e }}</a>
+							{{- end }}
+						</span>
+						{{- end -}}
+						{{- if .Params.tags }}
+						<span class="m-split">
+						{{- range $i, $e := .Params.tags }}
+							{{- if gt $i 0 }}
+							  
+							{{- end }}
+							<a class="tag-{{ $e | urlize }}" href="{{ $Site.BaseURL}}/tags/{{ $e | urlize }}">#{{ $e }}</a>
+						{{- end }}
+						</span>
+						{{- end }}
+						{{- if .IsTranslated }}
+						<span class="m-split">
+							{{ i18n "readInLanguage" }}{{ range .Translations }} <a href="{{ .Permalink }}">{{ .Lang }}</a>
+							{{- end }}
+						</span>
+						{{- end }}
+						{{- if ne .Date .Lastmod }}
+						<time class="m-split" datetime='{{ .Lastmod.Format "2006-01-02T15:04:05+00:00" }}' data-updated="true">Updated: {{ .Date.Format "Jan 2, 2006" }}</time>
+						{{- else }}
+						<time class="m-split" datetime='{{ .Date.Format "2006-01-02T15:04:05+00:00" }}'>{{ .Date.Format "Jan 2, 2006" }}</time>
+						{{- end -}}
+							{{- end -}}
+						{{ if not (eq .Params.hideComments true) }}
+							{{- if .Site.Params.disqusShortname }}
+						<span class="m-split">
+							<a href="{{ .RelPermalink }}#disqus_thread" data-disqus-identifier="{{ or .Params.disqusId .Permalink }}">{{ i18n "commentsLinkText" }}</a>
+						</span>
+							{{- end }}
+						{{- end }}
+						<div class="entry-content">
+							{{ .Summary -}}
+							{{- if .Truncated }}
+							<a href="{{ .RelPermalink }}" class="more-link">{{ i18n "readMoreText" }} &rarr;</a>
+							{{- end }}
+						</div>
+					</article>
+					{{- if .Params.tnimage }}
+					<a class="index-image" href="{{ .RelPermalink }}">
+						<img src="{{.Params.tnimage}}" alt="{{ .Title }}"/>
+					</a>
+					{{- end }}
+					<hr />
+				{{- end }}
+				</div>
+				{{- partial "pagination.html" . }}
+			</section>
+		</main>
+		{{- partial "footer.html" . }}
+	</body>
+</html>

@@ -1,0 +1,3 @@
+				{{ if and (not .Params.nocomment) .Site.Params.disqusShortname }}
+					{{ template "_internal/disqus.html" . }}
+				{{ end }}

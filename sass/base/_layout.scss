@@ -1,0 +1,322 @@
+$max-width: 904px;
+$header-fonts: "Sinkin Sans 700",sans-serif;
+
+*{
+	// margin: 0;
+	padding: 0px;
+	box-sizing: inherit;
+}
+html{
+	box-sizing: border-box;
+}
+html{
+	text-rendering: geometricprecision;
+	font-size: 15px;
+	line-height: 1.6;
+	background-color: rgb(255, 255, 255);
+	color: rgb(34, 34, 34);
+}
+//with my fonts
+html{
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-rendering: geometricprecision;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+	display: block;
+}
+
+body {
+	margin: 0 auto;
+	width: 100%;
+	font-family : $body-font;
+	@media screen and (min-width:480px) {
+		font-size: 1rem;
+	}
+	@media screen and (min-width:768px) {
+		font-size: 1.26667rem;
+		line-height: 1.6842;
+	}
+	.wrapper-main {
+		background: none repeat scroll 0% 0% rgb(250, 250, 250);
+		border-top: 1px solid rgb(228, 228, 228);
+		border-bottom: 1px solid rgb(228, 228, 228);
+		.wrapper-content {
+			max-width : 904px;
+			margin : 0 auto;
+			padding : 11px 14px;
+			@media only screen and (min-width:480px) {
+				padding : 21px 46px;
+			}
+			@media only screen and (min-width:768px) {
+				padding : 21px 52px;
+			}
+		}
+	} 
+}
+
+h1 {
+	margin-top : 0;
+	margin-bottom : 1.6em;
+	text-transform : uppercase;
+	text-align : center;
+	letter-spacing : 0.05rem;
+}
+h1, h2 {
+	font-size : 1.23334rem;
+	line-height : 1.4118;
+	font-family: $post-title-font-family;
+	font-weight: normal;
+	@media screen and (min-width:768px) {
+		font-size : 1.7rem;
+		line-height : 1.3333;
+	}
+}
+h3 {
+	font-weight : bold;
+}
+h3, h4, h5, h6 {
+	font-size : inherit;
+}
+h3, h4, h5 {
+	margin : 0.8em 0;
+}
+h6 {
+	float : left;
+	font-family : $body-font;
+	font-weight : bold;
+	line-height : 1.6em;
+	margin : 0 0.5em 0 0;
+	text-transform : lowercase;
+} 
+
+// import begins
+	a{
+		text-decoration:none;
+		&:hover{
+			text-decoration:none;
+		}
+	}
+	a.more-link {
+		color: #000;
+		border-bottom: none;
+		&:hover {
+			color: $color-link-hovered;
+			border-bottom: 2px solid $color-link-hovered;
+		}
+	}
+	p, blockquote, ul, ol, dl, table, iframe, h1, h2, h3, h4, h5, .video-container{
+		margin-top: 1.5em;
+		margin-bottom: 1.5em;
+		a{
+			border-bottom:1px solid $color-link-default;
+			&:hover {
+				color: $color-link-hovered;
+				border-bottom: 2px solid $color-link-hovered;
+			}
+		}
+	}
+	ul, ol, dl{
+		margin-left: 20px;
+		ul, ol, dl{
+			margin-top: 0;
+		}
+	}
+	strong{
+		font-weight: bold;
+	}
+	em{
+		font-style: italic;
+	}
+	p{
+		margin-top: 10px;
+	}
+	/*
+	h1,h2{
+		font-weight: 300;
+		font-size: 1.6rem; //19px;
+		text-align: center;
+		margin-top: 2.4em;
+		line-height: 1.333; //32px;
+		font-weight: bold;
+		//border-bottom: 1px solid $color-gray04;
+		position: relative;
+		font-family: $post-title-font-family;
+		&:before{
+			content: "";
+			position: absolute;
+			bottom: -2px;
+			border-bottom: 1px solid $color-gray05;
+			width: 100%;
+		}
+	}
+	h3{
+		@extend h2;
+		font-size: 1.4rem;
+		text-align: left;
+		margin-top: 1.0em;
+	}
+	h4{
+		@extend h3;
+		font-size: 1.2rem;
+	}
+	h6{
+		font-size: 0.9em;;
+		font-family: $post-title-font-family;
+		margin: 0px 0.5em 0px 0px;
+		text-transform: uppercase;
+		line-height: 1.4em;
+		font-weight: bold;
+		float: left;
+		box-sizing: inherit;
+		text-rendering: geometricprecision;
+	}
+	*/
+
+
+	
+	blockquote{
+		background: $color-gray04;
+		border-left: 5px solid $color-gray03;
+		padding: 15px 20px;
+		margin-top: 10px;
+		& > p:first-of-type{
+			margin-top: 0;
+		}
+	}
+	iframe{
+		border: none;
+	}
+	table{
+		background: $color-gray04;
+		border: 1px solid $color-gray03;
+		border-spacing: 0;
+		margin-top: 10px;
+		th{
+			background: $color-gray03;
+			padding: 0 15px;
+		}
+		td{
+			text-align: center;
+		}
+		tr{
+			&:nth-of-type(2n){
+				background: #d5d5d5;
+			}
+		}
+	}
+	.caption{
+		display: block;
+		font-size: 0.9em;
+		color: $color-gray02;
+		padding-left: 25px;
+		position: relative;
+	}
+	.video-container{
+		position: relative;
+		padding-bottom: 56.25%;
+		padding-top: 30px;
+		height: 0;
+		overflow: hidden;
+		iframe, object, embed{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			margin-top: 0;
+		}
+	}
+
+// import ends
+
+/*body{
+	font-family: $font-default;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 1.5;
+	background: $color-background;
+    color: $color-gray01;
+	@media screen and (max-width: 1040px){
+		margin: 0 20px;
+	}
+	@media screen and (max-width: 600px){
+		font-size: 13px;
+		margin: 0 20px;
+	}
+	//debug h kell-e:
+	width: 100%;
+	margin: 0px;
+}*/
+/*
+h1{
+	font-size: 36px;
+}
+h2{
+	font-size: 36px;
+	line-height:1;
+	font-weight:300;
+}
+h3{
+	font-size: 20px;
+	line-height: 1.2;
+	margin: 1.2em 0 0 0;
+	font-weight: normal;
+	display: block;
+	@media screen and (max-width: 620px) {
+	font-size: 15px;
+		}
+	}
+	*/
+a {
+ 	text-decoration:none;
+	color:$color-link-default;
+	outline:none;
+	&:hover {
+		//@include transition(0.3s);
+		color: $color-link-hovered;
+		border-bottom: 2px solid $color-link-hovered;
+	}
+}
+
+.alignleft{
+	float: left;
+}
+.alignright{
+	float: right;
+}
+.clearfix{
+	//FIXME
+//	@include pie-clearfix;
+}
+/*
+.inner{
+	width: $max-width;
+	margin: 0 auto;
+	@media screen and (max-width: 1040px){
+		width: 100%;
+	}
+}
+.content-wrapper {
+	max-width: $max-width;
+	margin: 0 auto;
+	padding: 11px 14px;
+	@media screen and (min-width: 480px){
+		padding: 21px 46px;
+	}
+	@media screen and (min-width: 768px){
+		padding: 21px 52px;
+	}
+	hr {
+		width: 100%;
+		margin: 1.6em auto;
+		//color: rgb(74, 74, 74);
+		//opacity: 0.1;
+		border: 0;
+		height: 1px;
+		background: #333;
+		background-image: linear-gradient(to right, #ccc, #333, #ccc);
+
+	}
+}
+*/

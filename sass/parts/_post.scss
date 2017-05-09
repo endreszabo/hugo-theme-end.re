@@ -1,0 +1,35 @@
+/*.post{
+	.meta{
+		color: $color-gray02;
+		text-transform: uppercase;
+		font-size: 0.7888em;
+		line-height: 1.3333;
+		a{
+			//color: $color-gray02;
+			//@include transition(0.3s);
+			&:hover{
+				color: $color-gray01;
+			}
+		}
+		.comments{
+			a{
+				color: $color-gray02;
+				@include transition(0.3s);
+				&:hover{
+					color: $color-gray01;
+				}
+			}
+		}
+	}
+	a{
+		//text-decoration:none;
+		color:$color-link-default;
+		outline:none;
+		border-bottom:1px solid #000;
+		&:hover {
+			color:$color-link-hovered;
+			border-bottom:2px solid $color-link-hovered;
+		}
+	}
+}
+*/

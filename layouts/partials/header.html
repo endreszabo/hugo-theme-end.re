@@ -1,0 +1,33 @@
+ 
+		<header class="header-main">
+			<div class="logo">
+				<a title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}">
+					<img src="/images/el.svg" alt="logo" width="90" class="logo-main"/>
+				</a>
+			</div>
+			<div class="nav">
+				<nav class="main-nav">
+					<ul>
+					{{- range .Site.Menus.main }}
+						<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+					{{- end }}
+					</ul>
+				</nav>
+				<nav class="mobile-nav" id="mobile-nav">
+					<div class="alignleft menu">
+						<a class="button">Menu</a>
+						<div class="container">
+							<ul>
+							{{- range .Site.Menus.main }}
+								<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+							{{- end }}
+							</ul>
+						</div>
+					</div>
+				</nav>
+				<nav id="sub-nav">
+					<div id="search-form-wrap">
+					</div>
+				</nav>
+			</div>
+		</header>
