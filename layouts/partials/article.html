@@ -1,3 +1,4 @@
+            <section class="wrapper-content">
 				<section class="post-index" itemscope itemtype="http://schema.org/BlogPosting">
 					<article class="post-content">
 						<div class="post-header">
@@ -16,14 +17,6 @@
 						<div class="entry-content" itemprop="articleBody">
 							{{ .Content -}}
 						</div>
-						{{ if not .Params.notoc }}
-						{{ if .TableOfContents }}
-						<div class="article-toc" {{ if .Site.Params.SmartToc }}style="display:none;"{{ end }}>
-							<h3>Contents</h3>
-							{{ .TableOfContents }}
-						</div>
-						{{ end }}
-						{{ end }}
 
 						{{ if .Site.Params.SmartToc }}
 						<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
@@ -78,3 +71,11 @@
 				<hr />
 				{{ partial "nav.html" . }}
 			</section>
+		</section>
+		{{ if not .Params.params.notoc }}
+		<div class="article-toc" {{ if .Site.Params.SmartToc }}style="display:none;"{{ end }}>
+			<h3>Contents</h3>
+			{{ .TableOfContents }}
+		</div>
+		{{ end }}
+

@@ -11,11 +11,8 @@
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha256-ExtbCSBuYA7kq1Pz362ibde9nnsHYPt6JxuxYeZbU+c=" crossorigin="anonymous"></script>
 			<script>renderMathInElement(document.body);</script>
 		{{- end }}
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
+<script type="text/javascript">if(window.location.hostname=="localhost")return;
     var disqus_shortname = 'endreszabo';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
@@ -32,4 +29,6 @@
 				}
 			});
 		</script>
-
+		{{- if .Params.params.useasciinema }}
+		<script src="/a/a.js"></script>
+		{{- end}}

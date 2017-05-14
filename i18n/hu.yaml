@@ -59,3 +59,9 @@
     one: 'egy bejegyzés'
     other: '{{ .Count}} bejegyzés'
 
+- id: tags
+  translation: "címkék"
+
+- id: categories
+  translation: "kategóriák"
+
