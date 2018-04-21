@@ -10,7 +10,7 @@
 				<div class="post-index">
 				{{- $posts := .Paginate (.Data.Pages) }}
 				{{- range $posts.Pages -}}
-					{{ if .Params.tnimage }}
+					{{ if .Params.params.indeximage }}
 					<article class="post-content-with-image">
 					{{ else }}
 					<article class="post-content">
@@ -28,9 +28,9 @@
 							{{- end }}
 						</div>
 					</article>
-					{{- if .Params.tnimage }}
+					{{- if .Params.params.indeximage }}
 					<a class="index-image" href="{{ .RelPermalink }}">
-						<img src="{{.Params.tnimage}}" alt="{{ .Title }}"/>
+						<img src="/pimg/{{.Params.slug}}_{{.Params.params.indeximage}}" alt="{{ .Title }}"/>
 					</a>
 					{{- end }}
 					<hr />

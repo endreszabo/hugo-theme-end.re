@@ -1,0 +1,5 @@
+							{{- if eq .Lang "hu" }}
+							{{ index $.Site.Data.honapok (printf "%d" .Lastmod.Month ) }}. {{ .Lastmod.Day }}, {{ .Lastmod.Year }}
+							{{- else }}
+							{{ .Lastmod.Format "Jan" }} {{ .Lastmod.Day | humanize }}, {{ .Lastmod.Year }}
+							{{- end }}

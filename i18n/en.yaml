@@ -40,7 +40,7 @@
   translation: Blog Posts
 
 - id: tagListIndexTitle
-  translation: 'Entries tagged with <span class="tag-{{ .Title }}">##{{ .Title }}</span>'
+  translation: 'Entries tagged with <span class="tag-{{ .Title }}">#{{ .Title }}</span>'
 
 - id: categoryListIndexTitle
   translation: '{{ .Title }} entries'
@@ -58,4 +58,10 @@
   translation:
     one: 'one entry'
     other: '{{ .Count}} entries'
+
+- id: tags
+  translation: "tags"
+
+- id: categories
+  translation: "categories"
 

@@ -8,7 +8,7 @@
 			<section class="wrapper-content">
 				<h1 class="h1-title">{{ i18n "blogPostsIndexTitle" }}</h1>
 				<div class="post-index">
-				{{- $posts := .Paginate (where .Data.Pages.ByPublishDate "Type" "!=" "page") }}
+				{{- $posts := .Paginate $.Site.Pages }}
 				{{- range $posts.Pages -}}
 					{{ if .Params.params.indeximage }}
 					<article class="post-content-with-image">
@@ -30,7 +30,7 @@
 					</article>
 					{{- if .Params.params.indeximage }}
 					<a class="index-image" href="{{ .RelPermalink }}">
-						<img src="/p/{{ lower .Params.params.postcode }}/{{.Params.params.indeximage}}" alt="{{ .Title }}"/>
+						<img src="/pimg/{{.Params.slug}}_{{.Params.params.indeximage}}" alt="{{ .Title }}"/>
 					</a>
 					{{- end }}
 					<hr />
