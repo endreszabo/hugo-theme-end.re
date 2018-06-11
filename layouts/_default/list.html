@@ -10,29 +10,7 @@
 				<div class="post-index">
 				{{- $posts := .Paginate (.Data.Pages) }}
 				{{- range $posts.Pages -}}
-					{{ if .Params.params.indeximage }}
-					<article class="post-content-with-image">
-					{{ else }}
-					<article class="post-content">
-					{{- end -}}
-							{{ if not (eq .Params.hideTitle true) }}
-						{{- if .Title }}
-						<h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a></h2>
-							{{- end -}}
-						{{- end -}}
-						{{ partial "post-meta" . }}
-						<div class="entry-content">
-							{{ .Summary -}}
-							{{- if .Truncated }}
-							<a href="{{ .RelPermalink }}" class="more-link">{{ i18n "readMoreText" }} &rarr;</a>
-							{{- end }}
-						</div>
-					</article>
-					{{- if .Params.params.indeximage }}
-					<a class="index-image" href="{{ .RelPermalink }}">
-						<img src="/pimg/{{.Params.slug}}_{{.Params.params.indeximage}}" alt="{{ .Title }}"/>
-					</a>
-					{{- end }}
+					{{- partial "index-lead.html" . }}
 					<hr />
 				{{- end }}
 				</div>

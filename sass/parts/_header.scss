@@ -55,12 +55,14 @@ $header-height: 25px;
 					margin-right : 0;
 				}
 			}
+/*
 			@media screen and (max-width:479px) {
 				display : none;
 			}
+*/
 		}
 		// IA-style mobile site
-		/*
+/* not in use now
 		.mobile-nav {
 			@media screen and (min-width:479px) {
 				display : none;
@@ -95,7 +97,6 @@ $header-height: 25px;
 				}
 			}
 		}
-		*/
 		// OLD style mobile nav
 		.mobile-nav{
 			display: none;
@@ -152,6 +153,7 @@ $header-height: 25px;
 				}
 			}
 		}
+*/
 	}
 } 
 /*

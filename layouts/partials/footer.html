@@ -4,7 +4,7 @@
 		</footer>
 		{{- end }}
 		{{- if eq $.Page.Params.params.importHighlight true }}
-		<link rel="stylesheet" href="/css/h.css" />
+		<!--<link rel="stylesheet" href="/css/h.css" />-->
 		<script src="/js/highlight.js"></script>
 		<script>hljs.initHighlightingOnLoad();</script>
 		{{- end }}
@@ -17,20 +17,13 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha256-ExtbCSBuYA7kq1Pz362ibde9nnsHYPt6JxuxYeZbU+c=" crossorigin="anonymous"></script>
 		<script>renderMathInElement(document.body);</script>
 		{{- end }}
-		{{- if (ne $.Page.Params.params.hideComments true) }}
+		<!-- once it was disqus script
+		{{- if and .IsPage (ne $.Page.Params.params.hideComments true) }}
 		<script>
-		var disqus_config = function () {
-			this.page.url = "https://end.re{{ lower $.Page.Params.params.postcode }}";
-			this.page.identifier = "{{ lower $.Page.Params.params.postcode }}";
-		};
-		(function() {
-			var d = document, s = d.createElement('script');
-			s.src = 'https://endreszabo.disqus.com/embed.js';
-			s.setAttribute('data-timestamp', +new Date());
-			(d.head || d.body).appendChild(s);
-		})();
 		</script>
 		{{- end }}
+		-->
+		<!-- when i was a child 
 		<script>
 			document.getElementById('main-nav-toggle').addEventListener('click', function () {
 				var header = document.getElementById('header');
@@ -41,3 +34,4 @@
 				}
 			});
 		</script>
+		-->

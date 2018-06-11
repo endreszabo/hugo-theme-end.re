@@ -1,14 +1,16 @@
 <nav id="article-nav">
+	{{ if or ((.Prev) (.Next)) }}
+	Post timelime:
     {{ if .Prev }}
     <a href="{{ .Prev.RelPermalink }}" id="article-nav-newer" class="article-nav-link-wrap">
-        <div class="article-nav-title"><span>&lt;</span>&nbsp;
-            {{ .Prev.Title }}
-        </div>
+        <div class="article-nav-title prev">{{ .Prev.Title }}</div>
     </a>
     {{ end }}
+	<div class="article-nav-title current">[ {{ $.Page.Title }} ]</div>
     {{ if .Next }}
     <a href="{{ .Next.RelPermalink }}" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">{{ .Next.Title  }}&nbsp;<span>&gt;</span></div>
+        <div class="article-nav-title next">{{ .Next.Title  }}</div>
     </a>
     {{ end }}
+	{{ end }}
 </nav>

@@ -10,55 +10,8 @@
 				<div class="post-index">
 				{{- $posts := .Paginate (where .Data.Pages.ByPublishDate.Reverse "Type" "!=" "page") }}
 				{{- range $posts.Pages -}}
-					{{- if .Params.params.indeximage }}
-					<a class="index-image" href="{{ .RelPermalink }}">
-						<img src="/p/{{ lower .Params.params.postcode }}/{{.Params.params.indeximage}}" alt="{{ .Title }}"/>
-					</a>
-					{{- end }}
-					{{ if .Params.params.indeximage }}
-					<article class="post-content-with-image">
-					{{ else }}
-					<article class="post-content">
-					{{- end -}}
-							{{ if not (eq .Params.hideTitle true) }}
-						{{- if .Title }}
-						<h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a></h2>
-							{{- end -}}
-						{{- end -}}
-						{{ partial "post-meta.html" . }}
-						<div class="entry-content">
-							{{ .Summary -}}
-							{{- if .Truncated }}
-							<a href="{{ .RelPermalink }}" class="more-link">{{ i18n "readMoreText" }} &rarr;</a>
-							{{- end }}
-						</div>
-					</article>
+					{{- partial "index-lead.html" . }}
 					<hr />
-					<!-- here we try -->
-					<article class="post-content">
-						{{ if not (eq .Params.hideTitle true) }}
-							{{- if .Title }}
-						<h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a></h2>
-							{{- end -}}
-						{{- end -}}
-						{{ partial "post-meta.html" . }}
-					</article>
-					<article class="post-content">
-						<div class="entry-content">
-						{{- if .Params.params.indexImage }}
-						<a class="index-image" href="{{ .RelPermalink }}">
-							<img src="/p/{{ lower .Params.params.postcode }}/{{.Params.params.indexImage}}" class="alignleft" {{ if .Params.params.indexImagePercent }}style="width: {{ .Params.params.indexImagePercent}}%" {{ end }}alt="{{ .Title }}"/>
-						</a>
-					{{- end }}
-							{{ .Summary -}}
-							{{- if .Truncated }}
-							<a href="{{ .RelPermalink }}" class="more-link">{{ i18n "readMoreText" }} &rarr;</a>
-							{{- end }}
-						</div>
-						<div style="clear: both"></div>
-					</article>
-					<hr />
-					<!-- here we tried -->
 				{{- end }}
 				</div>
 				{{- partial "pagination.html" . }}

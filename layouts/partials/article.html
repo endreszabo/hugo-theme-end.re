@@ -25,6 +25,7 @@
 				<hr />
 				<section id="comments">
 					<h2 class="title">{{ i18n "commentSectionTitle" . }}</h2>
+					<button id="button_enable_comments" class="comments-toggle" onClick="enable_comments();">Click to show comments</button>
 					<div id="disqus_thread" aria-live="polite">{{ i18n "disqusNoscriptText" | safeHTML }}</div>
 				</section>
 				{{- end }}

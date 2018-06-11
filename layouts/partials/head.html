@@ -7,7 +7,8 @@
 		{{- end }}
 		{{- if eq $.Page.Params.params.importHighlight true }}
 		<link href="/css/hl.js" rel="stylesheet" type="text/css">
-		{{- end }}
+		{{- end -}}
+{{- if and .IsPage (ne $.Page.Params.params.hideComments true) }}{{ partial "enable_comments.html" . -}}{{- end }}
 		<link href="http://gmpg.org/xfn/11" rel="profile">
 		{{ if .Params.params.useasciinema}}<link rel="stylesheet" type="text/css" href="/a/a.css" />{{end}}
 {{- partial "head-meta.html" . -}}

@@ -330,6 +330,63 @@ a.index-image {
 .entry-content{
 }
 
+.article-nav-title.prev::before {
+	content: '⬅';
+	padding-right: 0.3em;
+}
+.article-nav-title.next::after {
+	content: '➡';
+	padding-left: 0.3em;
+}
+
+.article-nav-title.current {
+    color: #000;
+}
+
+.article-nav-title {
+    text-align: center;
+    color: #444;
+}
+
+.comments-toggle, button {
+	width: 100%;
+    border-style: solid;
+    border-width: 0;
+    cursor: pointer;
+    font-family: $post-title-font-family;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 0 inherit;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    display: inline-block;
+    padding-top: 1rem;
+    padding-right: 2rem;
+    padding-bottom: 1.0625rem;
+    padding-left: 2rem;
+	text-transform: uppercase;
+    //font-size: 1rem;
+	font-size: 1.6rem;
+    background-color: #888;
+    border-color: #218c08;
+    color: #fff;
+    transition: background-color .3s ease-out;
+	&::after {
+		@media only screen and (min-width:640px) {
+			content: ' (js+cookies!)';
+		}
+		@media only screen and (min-width:750px) {
+			content: ' (js+cookies ahead)';
+		}
+		@media only screen and (min-width:860px) {
+			content: ' (3rd party js+cookies ahead)';
+		}
+	}
+}
+
 
 section#comments {
 	h2.title {
