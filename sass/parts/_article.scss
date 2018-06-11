@@ -73,8 +73,62 @@
 	    padding-top: 1.6em;
 	}
 	.entry-content {
-		img.left {
+		figure.leftedge>img {
+			float: left;
+			width: 30%;
+			margin-left: -20%;
+		}
+		figure.rightedge>img {
 			float: right;
+			width: 30%;
+			margin-right: -20%;
+		}
+
+		// header image in each post
+		figure.fullwidth {
+			width: 100vw;                                                                                                                            
+			line-height:0;
+			position: relative;                                                                                                                      
+			left: calc(-50vw + 50%);                                                                                                                 
+			margin: 1.6em auto 1.6em;                                                                                                                
+			text-align: center;                                                                                                                      
+			img{                                                                                                                                     
+				margin: 0px auto;                                                                                                                    
+				max-width: 1400px;                                                                                                                   
+				width: 100%;                                                                                                                         
+			}                                                                                                                                        
+		} 
+		figcaption {
+			line-height:0;
+		}
+		span.article-body-image-caption {
+			font-size: 1.0rem;
+			line-height: 1.6rem;
+		}
+		span.article-body-image-copyright {
+			font-size: .9rem;
+			line-height: 1.3rem;
+			text-transform: uppercase;
+			color: #888;
+		}
+		// header image in each post
+		figure.center {
+			width: 100vw;                                                                                                                            
+			line-height:0;
+			position: relative;                                                                                                                      
+			left: calc(-50vw + 50%);                                                                                                                 
+			margin: 1.6em auto 1.6em;                                                                                                                
+			text-align: center;                                                                                                                      
+			img{                                                                                                                                     
+				//margin: 0px auto;                                                                                                                    
+				max-width: 100%;
+				//max-width: 1400px;                                                                                                                   
+				//width: 100%;                                                                                                                         
+			}                                                                                                                                        
+		} 
+
+		img.left {
+			float: left;
 			@media only screen and (min-width:568px) {
 				margin-left: 1em;
 			}
@@ -109,6 +163,11 @@
 			text-align: center;
 		}
 	}
+	.full-article {
+		p:first-of-type {
+			font-weight: bold;
+		}
+	}
 
 	.a-meta{
 		color: $color-gray02;
@@ -133,6 +192,7 @@
 			}
 		}
 	}
+
 	.m-split{
 		@extend .a-meta;
 		&:before{
@@ -152,31 +212,51 @@
 		@extend .a-meta;
 		text-align: center;
 	}
-}
-.post-content-with-image {
-	@extend .post-content;
-	@media only screen and (min-width:768px) {
-		width: 66.667%;
-		display: inline-block;
+/* fixme later on
+	&::after {
+		clear: both;
+		display: block;
 	}
+*/
 }
+
+/*
+//.post-content-with-image {
+//	@extend .post-content;
+//	@media only screen and (min-width:768px) {
+//		width: 66.667%;
+//		display: inline-block;
+//	}
+//}
+//*/
 
 a.index-image {
 	&:hover{
 		border: none;
 	}
-    img{
+    img {
     	vertical-align: middle;
 //		apparently these are not needed:
     	display: inline-block;
 //   	max-width: 100%;
 		width:100%;
 		@media only screen and (min-width:768px) {
-	    	width: 30%;
-	    	margin-left: 0.8em;
+	    	width: 28%;
+			margin-top: 3px;
+			.alignleft {
+				float: left;
+				margin-left: 0;
+				margin-right: 0.8em;
+			}
+			.alignright {
+				float: right;
+				margin-left: 0.8em;
+				margin-right: 0;
+			}
 	    }
     }
 }
+
 .a-header {
 	h1.a-title {
 		text-align:left;

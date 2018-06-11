@@ -1,20 +1,20 @@
-slug {{ $.Page.Params.params.slug }}
-slug {{ $.Page.Params.params.params.slug }}
-slug2 {{ $.Page.Params.params.postcode }}
 <figure {{ with .Get "class" }}class="{{.}}"{{ end }}>
-    {{ with .Get "link"}}<a href="{{.}}">{{ end }}
+	<div>
+		{{ with .Get "link"}}<a href="{{.}}">{{ end }}
 		<img src="/p/{{ lower $.Page.Params.params.postcode }}/{{ .Get "src" }}" {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt"}}{{.}}{{else}}{{ .Get "caption" }}{{ end }}"{{ end }} />
-    {{ if .Get "link" }}</a>{{ end }}
-    {{ if or (or (.Get "title") (.Get "caption")) (.Get "attr")}}
-    <figcaption>{{ if .Params.title }}
-        <h4>{{ .Get "title" }}</h4>{{ end }}
-        {{ if or (.Get "caption") (.Get "attr")}}<p>
-        {{ .Get "caption" }}
-        {{ with .Get "attrlink"}}<a href="{{.}}"> {{ end }}
-            {{ .Get "attr" }}
-        {{ if .Get "attrlink"}}</a> {{ end }}
-        </p> {{ end }}
-    </figcaption>
-    {{ end }}
+		{{ if .Get "link" }}</a>{{ end }}
+		{{ if or (.Get "caption") (.Get "attr") }}
+		<figcaption>
+			{{ if (.Get "caption") }}
+			<span itemprop="caption" class="article-body-image-caption">{{ .Get "caption" }}</span>
+			{{ end }}
+			{{ if (.Get "attr") }}
+			<span itemprop="copyrightHolder" class="article-body-image-copyright">
+			{{ with .Get "attrlink"}}<a href="{{.}}">{{ end }}<span class="article-body-image-copyright-label">Credit: </span>{{ .Get "attr" }}{{ if .Get "attrlink"}}</a>{{ end }}
+			</span>
+			{{ end }}
+		</figcaption>
+		{{ end }}
+	</div>
 </figure>
 
