@@ -73,8 +73,70 @@
 	    padding-top: 1.6em;
 	}
 	.entry-content {
-		img.left {
+		figure.leftedge>img {
+			float: left;
+			width: 30%;
+			margin-left: -20%;
+		}
+		figure.rightedge>img {
 			float: right;
+			width: 30%;
+			margin-right: -20%;
+		}
+
+		// header image in each post
+		figure.fullwidth {
+			width: 100vw;                                                                                                                            
+			line-height:0;
+			position: relative;                                                                                                                      
+			left: calc(-50vw + 50%);                                                                                                                 
+			margin: 1.6em auto 1.6em;                                                                                                                
+			text-align: center;                                                                                                                      
+			img{                                                                                                                                     
+				margin: 0px auto;                                                                                                                    
+				max-width: 1400px;                                                                                                                   
+				width: 100%;                                                                                                                         
+			}                                                                                                                                        
+		} 
+		figcaption {
+			line-height:0;
+		}
+		span.article-body-image-caption {
+			font-size: 1.0rem;
+			line-height: 1.6rem;
+		}
+		span.article-body-image-copyright {
+			font-size: .9rem;
+			line-height: 1.3rem;
+			text-transform: uppercase;
+			color: #888;
+		}
+		// header image in each post
+		figure.center {
+			width: 100vw;                                                                                                                            
+			line-height:0;
+			position: relative;                                                                                                                      
+			left: calc(-50vw + 50%);                                                                                                                 
+			margin: 1.6em auto 1.6em;                                                                                                                
+			text-align: center;                                                                                                                      
+			img{                                                                                                                                     
+				//margin: 0px auto;                                                                                                                    
+				max-width: 100%;
+				//max-width: 1400px;                                                                                                                   
+				//width: 100%;                                                                                                                         
+			}                                                                                                                                        
+		}
+		figure.arnyek {
+			img {
+				@media only screen and (min-width:828px) {
+					filter: drop-shadow(0px 35px 25px #888);
+					margin-bottom: 1.5em;
+				}
+			}
+		} 
+
+		img.left {
+			float: left;
 			@media only screen and (min-width:568px) {
 				margin-left: 1em;
 			}
@@ -109,6 +171,11 @@
 			text-align: center;
 		}
 	}
+	.full-article {
+		p:first-of-type {
+			font-weight: bold;
+		}
+	}
 
 	.a-meta{
 		color: $color-gray02;
@@ -133,6 +200,7 @@
 			}
 		}
 	}
+
 	.m-split{
 		@extend .a-meta;
 		&:before{
@@ -152,31 +220,51 @@
 		@extend .a-meta;
 		text-align: center;
 	}
-}
-.post-content-with-image {
-	@extend .post-content;
-	@media only screen and (min-width:768px) {
-		width: 66.667%;
-		display: inline-block;
+/* fixme later on
+	&::after {
+		clear: both;
+		display: block;
 	}
+*/
 }
+
+/*
+//.post-content-with-image {
+//	@extend .post-content;
+//	@media only screen and (min-width:768px) {
+//		width: 66.667%;
+//		display: inline-block;
+//	}
+//}
+//*/
 
 a.index-image {
 	&:hover{
 		border: none;
 	}
-    img{
+    img {
     	vertical-align: middle;
 //		apparently these are not needed:
     	display: inline-block;
 //   	max-width: 100%;
 		width:100%;
 		@media only screen and (min-width:768px) {
-	    	width: 30%;
-	    	margin-left: 0.8em;
+	    	width: 28%;
+			margin-top: 3px;
+			.alignleft {
+				float: left;
+				margin-left: 0;
+				margin-right: 0.8em;
+			}
+			.alignright {
+				float: right;
+				margin-left: 0.8em;
+				margin-right: 0;
+			}
 	    }
     }
 }
+
 .a-header {
 	h1.a-title {
 		text-align:left;
@@ -248,6 +336,63 @@ a.index-image {
 }
 
 .entry-content{
+}
+
+.article-nav-title.prev::before {
+	content: '⬅';
+	padding-right: 0.3em;
+}
+.article-nav-title.next::after {
+	content: '➡';
+	padding-left: 0.3em;
+}
+
+.article-nav-title.current {
+    color: #000;
+}
+
+.article-nav-title {
+    text-align: center;
+    color: #444;
+}
+
+.comments-toggle, button {
+	width: 100%;
+    border-style: solid;
+    border-width: 0;
+    cursor: pointer;
+    font-family: $post-title-font-family;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 0 inherit;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    display: inline-block;
+    padding-top: 1rem;
+    padding-right: 2rem;
+    padding-bottom: 1.0625rem;
+    padding-left: 2rem;
+	text-transform: uppercase;
+    //font-size: 1rem;
+	font-size: 1.6rem;
+    background-color: #888;
+    border-color: #218c08;
+    color: #fff;
+    transition: background-color .3s ease-out;
+	&::after {
+		@media only screen and (min-width:640px) {
+			content: ' (js+cookies!)';
+		}
+		@media only screen and (min-width:750px) {
+			content: ' (js+cookies ahead)';
+		}
+		@media only screen and (min-width:860px) {
+			content: ' (3rd party js+cookies ahead)';
+		}
+	}
 }
 
 

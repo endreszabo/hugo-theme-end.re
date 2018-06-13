@@ -1,2 +1,1 @@
-{{ $.Scratch.Set "jsAsciinema" 1 }}
-<asciinema-player src="/ar/{{ .Get "src"}}.json"{{ with .Get "title"}} title="{{ . }}"{{end}}{{ with .Get "author"}} author="{{ . }}"{{else}} author="{{ .Site.Params.Author}}"{{end}}{{with .Get "theme"}} theme="{{ . }}"{{end}}></asciinema-player>
+<asciinema-player src="/p/{{ lower $.Page.Params.params.postcode }}/{{ .Get "src"}}"{{ with .Get "title"}} title="{{ . }}"{{end}}{{ with .Get "author"}} author="{{ . }}"{{else}} author="{{ .Site.Params.Author}}"{{end}}{{with .Get "theme"}} theme="{{ . }}"{{end}}></asciinema-player>

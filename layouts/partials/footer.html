@@ -1,24 +1,29 @@
-
+		{{- if (ne $.Page.Params.params.hideFooterNote true) }}
 		<footer id="footer" class="inner">
 			{{ i18n "footerLicenseText" . | safeHTML }}
 		</footer>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
-		<script>hljs.initHighlightingOnLoad();</script>
-		{{- if .Site.Params.Katex }}
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha256-ExtbCSBuYA7kq1Pz362ibde9nnsHYPt6JxuxYeZbU+c=" crossorigin="anonymous"></script>
-			<script>renderMathInElement(document.body);</script>
 		{{- end }}
-<script type="text/javascript">if(window.location.hostname=="localhost")return;
-    var disqus_shortname = 'endreszabo';
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
+		{{- if eq $.Page.Params.params.importHighlight true }}
+		<!--<link rel="stylesheet" href="/css/h.css" />-->
+		<script src="/js/highlight.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		{{- end }}
+		{{- if eq $.Page.Params.params.importAsciinema true }}
+		<script src="{{ .Site.BaseURL }}/js/asciinema-player.js"></script>
+		{{- end }}
+		{{- if .Site.Params.Katex }}
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha256-ExtbCSBuYA7kq1Pz362ibde9nnsHYPt6JxuxYeZbU+c=" crossorigin="anonymous"></script>
+		<script>renderMathInElement(document.body);</script>
+		{{- end }}
+		<!-- once it was disqus script
+		{{- if and .IsPage (ne $.Page.Params.params.hideComments true) }}
+		<script>
+		</script>
+		{{- end }}
+		-->
+		<!-- when i was a child 
 		<script>
 			document.getElementById('main-nav-toggle').addEventListener('click', function () {
 				var header = document.getElementById('header');
@@ -29,6 +34,4 @@
 				}
 			});
 		</script>
-		{{- if .Params.params.useasciinema }}
-		<script src="/a/a.js"></script>
-		{{- end}}
+		-->
