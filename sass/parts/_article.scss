@@ -125,6 +125,14 @@
 				//max-width: 1400px;                                                                                                                   
 				//width: 100%;                                                                                                                         
 			}                                                                                                                                        
+		}
+		figure.arnyek {
+			img {
+				@media only screen and (min-width:828px) {
+					filter: drop-shadow(0px 35px 25px #888);
+					margin-bottom: 1.5em;
+				}
+			}
 		} 
 
 		img.left {
