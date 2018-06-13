@@ -29,13 +29,15 @@
 					<div id="disqus_thread" aria-live="polite">{{ i18n "disqusNoscriptText" | safeHTML }}</div>
 				</section>
 				{{- end }}
+				{{/* for a while we disable nav until unlisted-post support is somehow supported }}
 				{{ if (ne $.Page.Params.params.hideNav true) }}
 				<hr />
 				{{ partial "nav.html" . }}
 				{{- end }}
+				*/}}
 			</section>
 		</section>
-		{{ if (ne $.Page.Params.params.hideTOC true) }}
+		{{ if (eq $.Page.Params.params.showTOC true) }}
 		<div class="article-toc" {{ if .Site.Params.SmartToc }}style="display:none;"{{ end }}>
 			<h3>Contents</h3>
 			{% .TableOfContents %}

@@ -8,7 +8,7 @@
 			<section class="wrapper-content">
 				<h1 class="h1-title">{{ i18n "blogPostsIndexTitle" }}</h1>
 				<div class="post-index">
-				{{- $posts := .Paginate (where .Data.Pages.ByPublishDate.Reverse "Type" "!=" "page") }}
+				{{- $posts := .Paginate (where (where .Data.Pages.ByPublishDate.Reverse "Type" "!=" "page") ".Params.params.unlisted" "!=" "true") }}
 				{{- range $posts.Pages -}}
 					{{- partial "index-lead.html" . }}
 					<hr />
