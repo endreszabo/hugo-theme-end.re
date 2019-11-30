@@ -1,0 +1,12 @@
+
+		<link href="a/s.css" media="screen" rel="stylesheet" type="text/css">
+		{{- if eq $.Page.Params.params.importAsciinema true }}
+		<link href="css/asciinema-player.css" media="screen" rel="stylesheet" type="text/css">
+		{{- end }}
+		{{- if eq $.Page.Params.params.importHighlight true }}
+		<link href="css/h.css" rel="stylesheet" type="text/css">
+		{{- end -}}
+{{- if and .IsPage (ne $.Page.Params.params.hideComments true) }}{{ partial "enable_comments.html" . -}}{{- end }}
+		<link rel="preload" href="fonts/p0.woff2" as="font" crossorigin="anonymous" />
+		<link rel="preload" href="fonts/p1.woff2" as="font" crossorigin="anonymous" />
+		<link rel="preload" href="ss4r.woff" as="font" crossorigin="anonymous" />

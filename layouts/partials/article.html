@@ -13,7 +13,7 @@
 						</div>
 						{{- if $.Page.Params.params.headerimage }}
 						<figure class="landing-image">
-							<img src="{{.Params.headerimage}}" alt="{{ .Title }}"/>
+							<img src="{{$.Page.Params.params.headerimage}}" alt="{{ .Title }}"/>
 						</figure>
 						{{- end }}
 						<div class="entry-content full-article" itemprop="articleBody">
@@ -29,6 +29,15 @@
 					<div id="disqus_thread" aria-live="polite">{{ i18n "disqusNoscriptText" | safeHTML }}</div>
 				</section>
 				{{- end }}
+
+				{{- if (ne $.Page.Type "page") }}
+				<hr />
+				<section id="contribute">
+					<h3 class="title">Found a typo? A [<span color="blue"><i>citation needed</i></span>]? Other improvements?</a></h3>
+					<p>Feel free to	edit this very post using <a href="https://github.com/endreszabo/blog/edit/master/content/{{ $.Page.Type }}/{{ .File.LogicalName }}">this deeplink</a> within the GitHub repository of this blog</a>.
+				</section>
+				{{- end }}
+
 				{{/* for a while we disable nav until unlisted-post support is somehow supported }}
 				{{ if (ne $.Page.Params.params.hideNav true) }}
 				<hr />

@@ -5,18 +5,18 @@
 							{{- end -}}
 						{{- end -}}
 						{{ partial "post-meta.html" . }}
-					</article>
-					<article class="post-content">
-						<div class="entry-content">
-						{{- if .Params.params.indexImage }}
-						<a class="index-image" href="{{ .RelPermalink }}">
-							<img src="/p/{{ lower .Params.params.postcode }}/{{.Params.params.indexImage}}" class="alignright" {{ if .Params.params.indexImagePercent }}style="width: {{ .Params.params.indexImagePercent}}%" {{ end }}alt="{{ .Title }}"/>
-						</a>
-					{{- end }}
-							{{ .Summary -}}
-							{{- if .Truncated }}
-							<a href="{{ .RelPermalink }}" class="more-link">{{ i18n "readMoreText" }} &rarr;</a>
-							{{- end }}
+						<div class="post-content">
+							<div class="entry-content">
+							{{- if .Params.params.indexImage }}
+							<a class="index-image" href="{{ .RelPermalink }}">
+								<img src="p/{{ lower .Params.params.postcode }}/{{.Params.params.indexImage}}" class="alignright" {{ if .Params.params.indexImagePercent }}style="width: {{ .Params.params.indexImagePercent}}%" {{ end }}alt="{{ .Title }}"/>
+							</a>
+						{{- end }}
+								{{ .Summary -}}
+								{{- if .Truncated }}
+								<a href="{{ .RelPermalink }}" class="more-link">{{ i18n "readMoreText" }} &rarr;</a>
+								{{- end }}
+							</div>
+							<div style="clear: both"></div>
 						</div>
-						<div style="clear: both"></div>
 					</article>
